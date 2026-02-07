@@ -1,42 +1,169 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+
+@theme {
+    --color-grey-950: #131518;
+    --color-grey-900: #262e38;
+    --color-grey-500: #969fad;
+    --color-orange-500: #fc7614;
+
+    --text-1-s: 28px;
+    --text-1-h: 35px;
+    --text-2-s: 24px;
+    --text-2-h: 30px;
+    --text-3-s: 16px;
+    --text-3-h: 24px;
+    --text-4-s: 15px;
+    --text-4-bold-h: 19px;
+    --text-4-regular-h: 24px;
+    --text-5-s: 14px;
+    --text-5-bold-h: 18px;
+    --text-5-bold-spacing: 1.87px;
+    --text-5-semibold-h: 24px;
+    --text-5-semibold-spacing: 0.17px;
+    --text-5-regular-h: 22px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+    display: grid;
+    place-content: center;
+
+    background-color: var(--color-grey-950);
+    color: white;
+    height: 100vh;
+
+    font-family: "Overpass", sans-serif;
+    font-size: var(--text-4-s);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.interactive-page__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background: linear-gradient(#232a34, #181e27);
+    max-width: 327px;
+
+    border-radius: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.interactive-page__container > button {
+    font-size: var(--text-5-s);
+    color: var(--color-grey-950);
+    background-color: var(--color-orange-500);
+    padding: 16px 0;
+    border-radius: 26.5px;
+
+    font-weight: 700;
+    letter-spacing: var(--text-5-bold-spacing);
+    cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.interactive-page__container > button:hover {
+    background-color: white;
+    transition: all 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.interactive-text {
+    display: grid;
+    gap: 16px;
+
+    h1 {
+        font-size: var(--text-2-s);
+        font-weight: 700;
+    }
+
+    p {
+        font-size: var(--text-5-s);
+        font-weight: 400;
+        line-height: var(--text-5-regular-h);
+        color: var(--color-grey-500);
+    }
+}
+
+.interactive-icon {
+    display: grid;
+    place-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--color-grey-900);
+}
+
+.interactive-btn__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-radio {
+    display: none;
+}
+
+.interactive-btn__wrap label {
+    display: grid;
+    place-content: center;
+    height: 42px;
+    width: 42px;
+    font-size: var(--text-5-s);
+    color: var(--color-grey-500);
+    background-color: var(--color-grey-900);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.interactive-btn__wrap label:hover {
+    background-color: white;
+    color: black;
+}
+
+.interactive-btn__wrap input:checked + label {
+    background-color: var(--color-orange-500);
+    color: var(--color-grey-900);
+}
+
+.message-page__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 24px;
+    background: linear-gradient(#232a34, #181e27);
+    max-width: 327px;
+
+    border-radius: 15px;
+}
+
+.message-result__wrap {
+    display: grid;
+    place-content: center;
+    background-color: var(--color-grey-900);
+    height: 32px;
+    padding: 0 16px;
+    border-radius: 22.5px;
+
+    p {
+        font-size: var(--text-5-s);
+        color: var(--color-orange-500);
+    }
+}
+
+.message-text__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    h1 {
+        font-size: var(--text-2-s);
+        font-weight: 700;
+    }
+
+    p {
+        font-size: var(--text-5-s);
+        font-weight: 400;
+        line-height: var(--text-5-regular-h);
+        color: var(--color-grey-500);
+        text-align: center;
+    }
 }
